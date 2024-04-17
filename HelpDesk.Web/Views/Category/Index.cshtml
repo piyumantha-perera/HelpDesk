@@ -1,18 +1,16 @@
 ﻿@{
     ViewData["Title"] = "Add Categories";
 }
-
-<div class="container">
-    <h2>Manage Fault Categories</h2>
-    <form id="categoryForm">
-        <div class="form-group">
-            <label for="categoryName">Fault Category Name:</label>
-            <input type="text" class="form-control" id="categoryName" placeholder="Enter fault category name" required>
-        </div>
-        <div class="form-group">
-            <label for="categoryDescription">Fault Description:</label>
-            <textarea class="form-control" id="categoryDescription" rows="3" placeholder="Enter fault description"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+<div class="container-fluid d-flex justify-content-center align-items-center vh-100">
+  <form>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Fault Category Name</label>
+            <input type="text" class="form-control" id="strCategoryName" name="strCategoryName" aria-describedby="emailHelp" size="40">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Fault Description</label>
+            <textarea class="form-control" id="strCateFaultDesc" name="strCateFaultDesc" rows="5" cols="50"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 </div>

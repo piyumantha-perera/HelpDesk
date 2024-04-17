@@ -12,8 +12,7 @@ html, body {
 }
 
 
-
-body {
+.login-background-bg {
     font-family: 'Arial', sans-serif;
     background-image: url('../imagers/login/08.jpg'); /* Adjust the path as necessary */
     background-size: cover;
@@ -25,10 +24,8 @@ body {
     min-height: 100vh;
     margin: 0;
 }
-
-
 /* Add this style for an overlay */
-body::before {
+.login-background-bg::before {
     content: "";
     position: absolute;
     top: 0;
