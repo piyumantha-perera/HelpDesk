@@ -1,0 +1,131 @@
+﻿<style>
+
+    #statusBox .card {
+        color: #ffc107;
+        flex: 1 0 calc(25% - 1rem); /* Cards take up 1/4th of the container width with margin */
+        max-width: calc(25% - 1rem); /* Maximum width of cards */
+    }
+
+        #statusBox .card:not(:last-child) {
+            margin-bottom: 1rem; /* Add bottom margin to all cards except the last one */
+        }
+
+        /* Hover effect for cards */
+        #statusBox .card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease-in-out;
+        }
+
+    .countdown {
+        font-size: 0.9rem;
+        font-weight: bold;
+        padding: 0.375rem 0.75rem;
+        margin: 0; /* Adjust or remove margin as needed */
+    }
+
+    /* Small screen adjustments */
+    @@media (max-width: 768px) {
+        #statusBox .card {
+            flex: 1 0 calc(50% - 1rem); /* On small screens, cards take up half of the container width */
+            max-width: calc(50% - 1rem); /* Maximum width of cards on small screens */
+        }
+    }
+
+    @@media (max-width: 576px) {
+        #statusBox .card {
+            flex: 1 0 100%; /* On extra small screens, cards take full width */
+            max-width: 100%; /* Maximum width of cards on extra small screens */
+        }
+    }
+
+    .countdown {
+        font-size: 0.9rem;
+        color: #ff0000;
+        margin-top: 10px;
+    }
+
+    #statusBox .card button {
+        display: none; /* Hide all buttons by default */
+        margin-top: 10px;
+    }
+
+</style>
+
+@*<div class="container-fluid py-5">
+
+
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <!-- EPIC CMS API Card -->
+        <div class="col">
+
+            <div class="card h-100 text-center shadow">
+                <div class="card-body">
+                    <h4 class="card-title">EPIC CMS API</h4>
+                    <i id="epicCmsStatusIcon" class="fa-solid fa-arrows-rotate fa-3x text-warning"></i>
+                    <h5 id="epicCmsStatusText" class="card-text mt-3">Checking...</h5>
+                    <div id="epicCmsCountdown" class="alert alert-danger mt-3 countdown" role="alert" style="display: none;"></div>
+                    <button id="epicCmsOverride" class="btn btn-danger text-white btn-sm mt-3" style="display: none;">Overide</button>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Dfcc Email Gateway Card -->
+        <div class="col">
+            <div class="card h-100 text-center shadow">
+                <div class="card-body">
+                    <h4 class="card-title">DFCC Email Gateway</h4>
+                    <i id="dfccEmailGatewayStatusIcon" class="fa-solid fa-arrows-rotate fa-3x text-warning"></i>
+                    <h5 id="dfccEmailGatewayStatusText" class="card-text mt-3">Checking...</h5>
+                    <div id="dfccEmailGatewayCountdown" class="alert alert-danger mt-3 countdown" role="alert" style="display: none;"></div>
+                    <button id="dfccEmailGatewayOverride" class="btn btn-danger text-white btn-sm mt-3" style="display: none;">Overide</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rich Communication API Card -->
+        <div class="col">
+            <div class="card h-100 text-center shadow">
+                <div class="card-body">
+                    <h4 class="card-title">Rich Communication API</h4>
+                    <i id="richCommApiStatusIcon" class="fa-solid fa-arrows-rotate fa-3x text-warning"></i>
+                    <h5 id="richCommApiStatusText" class="card-text mt-3">Checking...</h5>
+                    <div id="richCommApiCountdown" class="alert alert-danger mt-3 countdown" role="alert" style="display: none;"></div>
+                    <button id="richCommApiOverride" class="btn btn-danger text-white btn-sm mt-3" style="display: none;">Overide</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- DFCC Debit Card DB Card -->
+        <div class="col">
+            <div class="card h-100 text-center shadow">
+                <div class="card-body">
+                    <h4 class="card-title">DFCC Debit Card DB</h4>
+                    <i id="dfccDebitCardDbStatusIcon" class="fa-solid fa-arrows-rotate fa-3x text-warning"></i>
+                    <h5 id="dfccDebitCardDbStatusText" class="card-text mt-3">Checking...</h5>
+                    <div id="dfccDebitCardDbCountdown" class="alert alert-danger mt-3 countdown" role="alert" style="display: none;"></div>
+                    <button id="dfccDebitCardDbOverride" class="btn btn-danger text-white btn-sm mt-3" style="display: none;">Overide</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col">
+            <div class="card h-100 text-center shadow">
+                <div class="card-body">
+                    <h4 class="card-title">VCAS RDX API</h4>
+                    <i id="vcasStatusIcon" class="fa-solid fa-arrows-rotate fa-3x text-warning"></i>
+                    <h5 id="vcasStatusText" class="card-text mt-3">Checking...</h5>
+                    <div id="vcasCountdown" class="alert alert-danger mt-3 countdown" role="alert" style="display: none;"></div>
+                    <button id="vcasOverride" class="btn btn-danger text-white btn-sm mt-3" style="display: none;">Overide</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>*@
+
+
+

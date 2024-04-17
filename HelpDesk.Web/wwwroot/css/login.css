@@ -1,0 +1,25 @@
+﻿.login-body {
+    border-top: 4px solid #d9120c;
+    background-color: rgb(251, 248, 248);
+}
+
+.login-background {
+    height: 90vh;
+   /* mix-blend-mode: multiply;*/
+}
+
+.bg-card {
+    border-radius: 20px;
+    width: 80%;
+    margin: 0px auto;
+}
+
+.form-heading {
+    color: #d9120c;
+}
+
+@media only screen and (max-width: 600px) {
+    .bg-card {
+        width: 100%;
+    }
+}

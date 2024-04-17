@@ -1,0 +1,136 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout_Login.cshtml";
+}
+
+<style>
+    /* Your existing styles here */
+    .alert {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1050;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        border: 0;
+        border-left: 4px solid;
+    }
+
+    .alert-success {
+        border-color: #28a745;
+    }
+
+    .alert-danger {
+        border-color: #dc3545;
+    }
+
+    /* Additional styles for the enrollment form */
+    #enrollmentForm .form-group {
+        margin-bottom: 1rem;
+    }
+
+    #enrollmentForm .invalid-feedback {
+        display: none;
+        width: 100%;
+        margin-top: .25rem;
+        font-size: 80%;
+        color: #dc3545;
+    }
+</style>
+
+<link href="~/css/login.css" rel="stylesheet" />
+
+
+<section class="login-background">
+    <div class="container row px-4 py-5 px-md-5 text-lg-start mx-auto d-flex">
+        <div class="mb-5 mb-lg-0 mx-auto mt-5 col-lg-6">
+            <div class="card bg-card">
+                <img src="" width="50%" class="m-3 mx-auto" />
+               @* <h4 class="mt-2 text-center form-heading">
+                   Help Desk
+                </h4>*@
+                <div class="card-body px-4 py-5 px-md-5">
+                    <form id="loginForm">
+                        <div>
+                            <div class="mb-4">
+                                <div class="form-outline">
+                                    <label class="form-label" for="username">User ID</label>
+                                    <input type="text" id="UserId" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="mb-4">
+                                <div class="form-outline">
+                                    <label class="form-label" for="password">Password</label>
+                                    <input type="password" id="Password" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit button -->
+                        <button type="submit" class="btn btn-danger btn-block mb-4 mx-auto d-block w-50">
+                            Login
+                        </button>
+                    </form>
+
+                    <footer class="main-footer text-center">
+                        Copyright &copy; 2023 - developed by Piyumantha Perera | v1.1
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<script>
+    $(document).ready(function () {
+        $('#loginForm').on('submit', function (e) {
+            e.preventDefault(); // Prevent default form submission
+
+            var userId = $('#UserId').val().trim();
+            var password = $('#Password').val().trim();
+
+            // Basic validation
+            if (userId === "" || password === "") {
+                alert("Please enter both User ID and password.");
+                return;
+            }
+
+            $.ajax({
+                //url: '@Url.Action("login", "Auth")',
+                //type: 'POST',
+                //contentType: 'application/json',
+                //data: JSON.stringify({ UserId: userId, Password: password }),
+                success: function (response) {
+                   // alert("Login successful: " + response);
+                    var toastr = new Toastr({
+                        theme: 'grassland',
+                        position: 'topLeft'
+
+                    });
+
+                    toastr.show("Login successful.. Redirecting");
+
+
+                    window.location.href = '@Url.Action("Index", "Dashboard")';
+
+                },
+                error: function (xhr, status, error) {
+
+                    var toastr = new Toastr({
+                        theme: 'sun',
+                        position: 'topLeft'
+
+                    });
+
+                    toastr.show("Login Unsuccessfull : " + xhr.responseText);
+
+                    console.log(xhr.responseText)
+                   // alert("Login failed: " + xhr.responseText);
+                }
+            });
+        });
+    });
+</script>

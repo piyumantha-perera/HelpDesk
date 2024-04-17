@@ -1,0 +1,73 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('../imagers/login/08.jpg'); /* Adjust the path as necessary */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* or 'fixed' if you want it to stay in place when scrolling */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+
+/* Add this style for an overlay */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1; /* Keep the overlay behind the content */
+}
+
+.card {
+    margin: 15px 0;
+    background-color: rgba(255,255,255,0.8); /* Semi-transparent white to make the text readable */
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card-title {
+    font-weight: 600;
+    color: #333;
+}
+
+.text-connected {
+    color: #4CAF50;
+}
+
+.text-disconnected {
+    color: #F44336;
+}
+
+.main-content {
+    flex: 1; /* This will allow the main content to expand and push the footer down */
+}
+
+footer.footer {
+    width: 100%; /* Ensure the footer spans the entire width */
+    position: absolute; /* Position it at the bottom */
+    bottom: 0;
+    background: #000; /* Your choice of background color */
+    color: white; /* Text color for the footer */
+}
